@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "capital.rssreader"
+        minSdkVersion 18
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile project(':libraryproject')
+    compile 'com.jakewharton:butterknife-parent:6.0.0'
+    compile 'com.jakewharton:butterknife:6.0.0'
+}
